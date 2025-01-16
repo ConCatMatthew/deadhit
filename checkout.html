@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div class="container2"></div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deadhit | checkout</title>
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d;
+            color: #bfbfbf;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            isolation: isolate;
+        }
+    
+        .scanlines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.15) 50%, transparent 50%);
+            background-size: 100% 3px;
+            pointer-events: none;
+            animation: scanlines 0.1s steps(1) infinite;
+            z-index: 2;
+        }
+    
+        @keyframes scanlines {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(3px);
+            }
+        }
+  
+        .container2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: radial-gradient(
+    ellipse 1.5px 2px at 1.5px 50%,
+    #0000 0,
+    #0000 90%,
+    #000 100%
+  );
+  background-size: 25px 8px;
+}
+
+.container2 {
+  z-index: -20;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  --c: #400094;
+  background-color: #000;
+  background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 252px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 252px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 126px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 150px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 150px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 253px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 253px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 204px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 204px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 102px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 134px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 134px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 67px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 179px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 179px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 89.5px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 299px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 299px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 149.5px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 215px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 215px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 107.5px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 281px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 281px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 140.5px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 158px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 158px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 79px, var(--c) 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 210px, var(--c), #0000),
+    radial-gradient(4px 100px at 300px 210px, var(--c), #0000),
+    radial-gradient(1.5px 1.5px at 150px 105px, var(--c) 100%, #0000 150%);
+  background-size:
+    300px 235px,
+    300px 235px,
+    300px 235px,
+    300px 252px,
+    300px 252px,
+    300px 252px,
+    300px 150px,
+    300px 150px,
+    300px 150px,
+    300px 253px,
+    300px 253px,
+    300px 253px,
+    300px 204px,
+    300px 204px,
+    300px 204px,
+    300px 134px,
+    300px 134px,
+    300px 134px,
+    300px 179px,
+    300px 179px,
+    300px 179px,
+    300px 299px,
+    300px 299px,
+    300px 299px,
+    300px 215px,
+    300px 215px,
+    300px 215px,
+    300px 281px,
+    300px 281px,
+    300px 281px,
+    300px 158px,
+    300px 158px,
+    300px 158px,
+    300px 210px,
+    300px 210px,
+    300px 210px;
+  animation: hi 150s linear infinite;
+}
+
+@keyframes hi {
+  0% {
+    background-position:
+      0px 220px,
+      3px 220px,
+      151.5px 337.5px,
+      25px 24px,
+      28px 24px,
+      176.5px 150px,
+      50px 16px,
+      53px 16px,
+      201.5px 91px,
+      75px 224px,
+      78px 224px,
+      226.5px 350.5px,
+      100px 19px,
+      103px 19px,
+      251.5px 121px,
+      125px 120px,
+      128px 120px,
+      276.5px 187px,
+      150px 31px,
+      153px 31px,
+      301.5px 120.5px,
+      175px 235px,
+      178px 235px,
+      326.5px 384.5px,
+      200px 121px,
+      203px 121px,
+      351.5px 228.5px,
+      225px 224px,
+      228px 224px,
+      376.5px 364.5px,
+      250px 26px,
+      253px 26px,
+      401.5px 105px,
+      275px 75px,
+      278px 75px,
+      426.5px 180px;
+  }
+
+  to {
+    background-position:
+      0px 6800px,
+      3px 6800px,
+      151.5px 6917.5px,
+      25px 13632px,
+      28px 13632px,
+      176.5px 13758px,
+      50px 5416px,
+      53px 5416px,
+      201.5px 5491px,
+      75px 17175px,
+      78px 17175px,
+      226.5px 17301.5px,
+      100px 5119px,
+      103px 5119px,
+      251.5px 5221px,
+      125px 8428px,
+      128px 8428px,
+      276.5px 8495px,
+      150px 9876px,
+      153px 9876px,
+      301.5px 9965.5px,
+      175px 13391px,
+      178px 13391px,
+      326.5px 13540.5px,
+      200px 14741px,
+      203px 14741px,
+      351.5px 14848.5px,
+      225px 18770px,
+      228px 18770px,
+      376.5px 18910.5px,
+      250px 5082px,
+      253px 5082px,
+      401.5px 5161px,
+      275px 6375px,
+      278px 6375px,
+      426.5px 6480px;
+  }
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #5d00d677, #00000000);
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  .topnav a:hover {
+    background-color: #5d00d6;
+  }
+
+  .topnav a.active {
+    background-color: #400094;
+  }
+
+  .button2-container {
+  display: flex;
+  background-color: black;
+  width: 250px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.button2 {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button2:hover {
+  transform: translateY(-3px);
+}
+
+.icon2 {
+  font-size: 20px;
+}
+
+/* Body */
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 0px;
+}
+
+hr {
+  height: 1px;
+  background-color: #2e2e2e; /* Dark gray line */
+  border: none;
+}
+
+.card {
+  width: 400px;
+  background: #1c1c1c; /* Dark background for a professional look */
+  background: #1a1a1a;
+            border: 2px solid #5d00d6;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #5d00d6;
+}
+
+.title {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  border-bottom: 1px solid #2e2e2e; /* Dark gray */
+  font-weight: 700;
+  font-size: 11px;
+  color: #ffffff; /* White text */
+}
+
+/* Cart */
+.cart {
+  border-radius: 19px 19px 0px 0px;
+}
+
+.cart .steps {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cart .steps .step {
+  display: grid;
+  gap: 10px;
+}
+
+.cart .steps .step span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff; /* White text */
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cart .steps .step p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #bbbbbb; /* Light gray text */
+}
+
+/* Promo */
+.promo form {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  gap: 10px;
+  padding: 0px;
+}
+
+.input_field {
+  width: auto;
+  height: 36px;
+  padding: 0 0 0 12px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #2e2e2e; /* Dark gray */
+  background-color: #333333; /* Dark input background */
+  color: #ffffff; /* White text */
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #555555; /* Light gray focus */
+  background-color: #333333;
+}
+
+.promo form button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 18px;
+  gap: 10px;
+  width: 100%;
+  height: 36px;
+  background: #555555; /* Medium gray button */
+  box-shadow:
+    0px 0.5px 0.5px #555555,
+    0px 1px 0.5px rgba(239, 239, 239, 0.5);
+  border-radius: 5px;
+  border: 0;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff; /* White text */
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+/* Checkout */
+.payments .details {
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  padding: 0px;
+  gap: 5px;
+}
+
+.payments .details span:nth-child(odd) {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff; /* White text */
+}
+
+.payments .details span:nth-child(even) {
+  font-size: 13px;
+  font-weight: 600;
+  color: #bbbbbb; /* Light gray text */
+}
+
+.checkout .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 10px 20px;
+  background-color: #2e2e2e; /* Dark gray background */
+}
+
+.price {
+  font-size: 22px;
+  color: #ffffff; /* White text */
+  font-weight: 900;
+}
+
+.payments .checkout-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 36px;
+  background: #555555; /* Medium gray button */
+  border-radius: 7px;
+  border: 1px solid #2e2e2e; /* Dark gray border */
+  color: #ffffff; /* White text */
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.checkout .checkout-btn:hover {
+  background-color: #777777; /* Slightly lighter gray on hover */
+}
+
+    </style>    
+</head>
+<body>
+  <div class="topnav">
+    <button class="button2" onclick="window.location.href='https://deadhit.site/'">
+      <!-- HOME -->
+      <svg
+        class="icon2"
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+        ></path>
+      </svg>
+    </button>
+    <button class="button2" onclick="window.location.href='https://deadhit.site/guide'">
+      <!-- SEARCH -->
+      <svg
+        class="icon2"
+        stroke="currentColor"
+        fill="none"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        ></path>
+      </svg>
+    </button>
+  
+    <button class="button2" onclick="window.location.href='https://deadhit.site/invite'">
+      <svg
+        class="icon2"
+        stroke="currentColor"
+        fill="none"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path
+          d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <div class="container">
+    <div class="card cart">
+      <label class="title">INVITE CHECKOUT</label>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <span>Summary</span>
+            <div style="margin-top: -10px"></div>
+            <h4>deadhit invite payment</h4>
+            <div style="margin-top: -10px"></div>
+            <p>1 invite, roblox payment</p>
+          </div>
+          <div>
+            <span>PAYMENT METHOD</span>
+            <p>Robux</p>
+            <h3 id="userName">BoyiamBoyxd</h3>
+          </div>
+          <div class="promo">
+            <span>Enter your e-mail:</span>
+            <form class="form">
+              <input
+                id="email"
+                class="input_field"
+                placeholder="email..."
+                type="email"
+              />
+            </form>
+            <div style="margin-top: 20px"></div>
+            <span>Have a promo code?</span>
+            <form class="form">
+              <input
+                id="promo"
+                class="input_field"
+                placeholder="promo code..."
+                type="text"
+              />
+              <button>Apply</button>
+            </form>
+          </div>
+          <hr />
+          <div class="payments">
+            <span>PAYMENT</span>
+            <div class="details">
+              <span>Subtotal:</span>
+              <span>$0.50</span>
+              <span>Tax:</span>
+              <span>$0.49</span>
+              <span>To payment price:</span>
+              <span>R$20</span>
+              <label class="price" id="price">$0.99 (R$20)</label>
+              <button class="checkout-btn" onclick="checkout()">Check Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  const originalPrice = 100;
+  const promoCode = "50OFF";
+  const discount = 0.5;
+
+  document.getElementById("promo").addEventListener("input", function () {
+      const promoInput = this.value.trim().toUpperCase();
+      const priceElement = document.getElementById("price");
+      if (promoInput === promoCode) {
+          priceElement.textContent = (originalPrice * (1 - discount)).toFixed(2);
+      } else {
+          priceElement.textContent = originalPrice;
+      }
+  });
+
+  function checkout() {
+    const email = document.getElementById("email").value.trim();
+    const promoInput = document.getElementById("promo").value.trim();
+    const price = document.getElementById("price").textContent;
+
+    if (!email) {
+        alert("Please fill in your email.");
+        return;
+    }
+
+    const webhookUrl = "https://discord.com/api/webhooks/1329449917743366236/4YfOQTy_FKf2y7xjLroFWs2HoqouMR4bfLd5oMQK4mYqmXSWZCw8dyqXnJHHLZS-2VNL";
+    const data = {
+        content: `**New Purchase**\nEmail: ${email}\nPrice: ${price} Robux\nPromo Code: ${promoInput}`
+    };
+
+    fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (response.ok) {
+            alert("Thank you for buying an invite. You will be redirected to the gamepass page. We will send you an e-mail containing your invite code after.");
+            window.location.href = "https://www.roblox.com/game-pass/1033374955/Deadhit-Invite";
+        } else {
+            alert("Failed to send data. Please try again.");
+        }
+    }).catch(error => {
+        console.error(error);
+        alert("An error occurred. Please try again.");
+    });
+}
+</script>
